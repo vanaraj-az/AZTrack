@@ -4,6 +4,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutDefaultComponent } from "./layout-default.component";
 import { CountryComponent } from './../../master/country/country-list/country-list.component';
+import { ClientListComponent } from './../../application/client/client-list/client-list.component';
 
 
 const countryRoutes : Routes = [
@@ -21,7 +22,8 @@ const countryRoutes : Routes = [
       NgbModule.forRoot()
   ],
   declarations: [
-      LayoutDefaultComponent
+      LayoutDefaultComponent,
+      ClientListComponent
   ],
   providers: [],
   exports : [

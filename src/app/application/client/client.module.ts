@@ -19,9 +19,9 @@ const clientRoutes : Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(clientRoutes),
         ReactiveFormsModule,
         AppCommonModule,
+        RouterModule.forRoot(clientRoutes),
         NgbModule.forRoot()
     ],
     declarations: [
@@ -32,7 +32,7 @@ const clientRoutes : Routes = [
         ClientService
     ],
     exports : [
-
+        RouterModule
     ]
 })
 export class ClientModule { }
