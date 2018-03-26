@@ -5,6 +5,7 @@ import { HttpService } from "../../../common/http/http.service";
 export class ProjectService {
 
     private url : String = "data/project.json";
+    private clientUrl : string = "data/clientlist.json";
 
     constructor(private httpService : HttpService) {
     }

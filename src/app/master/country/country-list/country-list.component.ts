@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgModel,FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { CountryForm } from './../forms/country.form'
 import { CountryService } from './../services/country.service';
@@ -13,15 +13,12 @@ import { CountryService } from './../services/country.service';
 
 export class CountryComponent implements OnInit {
 
-
     countryForm:FormGroup;
     countryList : any = [];
     url = '';
     index = 0;
     i : any;
     closeResult: string;
-    greeting = {};
-    name = 'World';
 
 
     constructor(private countryService : CountryService, private modalService: NgbModal){
@@ -30,13 +27,14 @@ export class CountryComponent implements OnInit {
         this.countryForm = country.getForm();
     }
 
-
+    //open a country modal
     open(content) {
         this.modalService.open(content).result.then((result) => {
           this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         });
+        this.countryForm
       }
     
       private getDismissReason(reason: any): string {
@@ -66,7 +64,7 @@ export class CountryComponent implements OnInit {
         if(this.index==0){
             this.countryList.push(this.countryForm.controls.country.value);
             console.log(this.countryList); 
-            alert(this.countryForm.controls.country.value + "  added successfully")
+            alert(this.countryForm.controls.country.value + "  added successfully");
             this.countryForm.controls.country.reset();
         }
         else{
@@ -76,7 +74,7 @@ export class CountryComponent implements OnInit {
         }
     }
 
-
+    //edit countryForm
     editCountry(i,content) {
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -106,7 +104,5 @@ export class CountryComponent implements OnInit {
                 console.log(this.countryList);
         //     }
         // );
+        }
     }
-
-
-}

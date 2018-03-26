@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ClientService {
 
-    private urlCountry = "/data/country.json";
+    private urlCountry : String = "/data/country.json";
     private url : String = "";
     
 
@@ -32,8 +32,8 @@ export class ClientService {
     //     return this.httpService.update(this.url + "?" + id);
     // }
 
-    //get country from json
 
+    //get country from json
     getCountry(){
         return this.httpService.get("/data/country.json");
     }

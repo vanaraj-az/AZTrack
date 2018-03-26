@@ -32,7 +32,7 @@
                 <div class="form-group row">
                     <label for="country" class="col-md-4 col-sm-4 col-xs4 col-form-label text-align">Country Name</label>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <input type="text" id="country" placeholder="Enter country name" [ngClass]="{'is-invalid': countryForm.get('country').touched && countryForm.get('country').invalid }" class="form-control" formControlName="country">
+                        <input type="text" id="country" placeholder="Enter country name" [ngClass]="{'is-invalid': countryForm.get('country').invalid }" class="form-control" formControlName="country">
                         <div class="invalid-feedback">
                             <error-required [controls]="countryForm.get('country')">
                                 this field is required
@@ -74,11 +74,11 @@
         </table>
     </div>
     <div class="row margin-top">
-        <div class="col-md-10"></div>
-        <div class="col-md-1">
-            <button type="submit" class="btn btn-outline-danger float-right" >Cancel</button>
+        <div class="col-md-10 col-sm-10 col-xs-10"></div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <button type="submit" class="btn btn-outline-primary float-right" ><a  href="">Back</a></button>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-1 col-xs-1">
             <button type="submit" (click)="submit()" class="btn btn-outline-primary float-right" >Submit</button>
         </div>
     </div> 

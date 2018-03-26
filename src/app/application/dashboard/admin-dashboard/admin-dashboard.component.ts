@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import * as $ from 'jquery';
 
 @Component({
+  selector: 'admin-dashboard',
   templateUrl: 'admin-dashboard.component.html',
 })
 export class AdminDashboardComponent implements OnInit {

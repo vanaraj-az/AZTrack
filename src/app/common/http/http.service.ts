@@ -26,4 +26,19 @@ export class HttpService {
     post(url, data) {
         return this.http.post(url, data, { headers : this.httpHeader });
     }
+
+     /** Post data to server
+        @return Observables
+    **/
+   update(url, data) {
+    return this.http.patch(url, data, { headers : this.httpHeader });
+    }
+
+     /** Post data to server
+        @return Observables
+    **/
+   delete(url) {
+    return this.http.delete(url,{ headers : this.httpHeader });
+    }
+
 }

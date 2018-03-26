@@ -13,7 +13,7 @@ export class ProjectForm {
         return this.fb.group({
             "projectName" : [" ", [Validators.required,Validators.minLength(10)]],
             "description" : [" ", [Validators.required,Validators.minLength(10)]],
-            "client"  : [" ", [Validators.required]]
+            "client"  : [" ", Validators.required]
         });
     }
 }
