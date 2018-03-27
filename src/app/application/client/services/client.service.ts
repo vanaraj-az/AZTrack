@@ -14,7 +14,7 @@ export class ClientService {
     }
 
     insert(data : JSON) {
-        return this.httpService.post(this.url, data);
+        return this.httpService.post("http://localhost:8080/client/update", data);
         
     }
 
@@ -35,6 +35,6 @@ export class ClientService {
 
     //get country from json
     getCountry(){
-        return this.httpService.get("/data/country.json");
+        return this.httpService.get("http://localhost:8080/country/call");
     }
 }

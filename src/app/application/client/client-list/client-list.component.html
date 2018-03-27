@@ -68,7 +68,7 @@
                 <div class="form-group row">
                     <label class="col-md-2 col-sm-2 col-xs-2 col-form-label" for="typeahead-focus">Country</label>
                     <div class="col-md-10 col-sm-10 col-xs-10">
-                        <input id="typeahead-focus" placeholder="search" type="text" [ngClass]="{'is-invalid': clientForm.get('country').invalid }" ngbTypeahead-editable="false" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" (focus)="focus$.next($event.target.value)" #instance="ngbTypeahead" formControlName="country">
+                        <input id="typeahead-focus" placeholder="search" type="text" [ngClass]="{'is-invalid': clientForm.get('country').invalid }" (click)="click$.next($event.target.value)" ngbTypeahead-editable="false" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" (focus)="focus$.next($event.target.value)" #instance="ngbTypeahead" formControlName="country">
                         <div class="invalid-feedback">
                             <error-required [controls]="clientForm.get('country')">
                                 Required Field
@@ -164,7 +164,7 @@
     <div class="row margin-top">
         <div class="col-md-10 col-sm-10 col-xs-10"></div>
         <div class="col-md-1 col-sm-1 col-xs-1">
-            <button type="submit" class="btn btn-outline-primary float-right" ><a  href="">Back</a></button>
+            <a  href=""><button type="submit" class="btn btn-outline-primary float-right" >Back</button></a>
         </div>
         <div class="col-md-1 col-sm-1 col-xs-1">
             <button type="submit" (click)="submitClient()" [disabled]="!clientForm.valid" class="btn btn-outline-primary float-right" >Submit</button>

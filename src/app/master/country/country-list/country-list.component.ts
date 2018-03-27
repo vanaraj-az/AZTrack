@@ -15,6 +15,7 @@ export class CountryComponent implements OnInit {
 
     countryForm:FormGroup;
     countryList : any = [];
+    countryAdd : any = [];
     url = '';
     index = 0;
     i : any;
@@ -58,19 +59,19 @@ export class CountryComponent implements OnInit {
          }
 
          
-    //push clientForm value into countryList
+    //push clientForm value into countryAdd
     addCountry(){
 
         if(this.index==0){
-            this.countryList.push(this.countryForm.controls.country.value);
-            console.log(this.countryList); 
+            this.countryAdd.push(this.countryForm.controls.country.value);
+            console.log(this.countryAdd); 
             alert(this.countryForm.controls.country.value + "  added successfully");
             this.countryForm.controls.country.reset();
         }
         else{
-            this.countryList[this.i] = this.countryForm.controls.country.value;
+            this.countryAdd[this.i] = this.countryForm.controls.country.value;
             this.countryForm.controls.country.reset();
-            console.log(this.countryList);
+            console.log(this.countryAdd);
         }
     }
 
@@ -84,25 +85,25 @@ export class CountryComponent implements OnInit {
         this.index = 1;
         this.i = i;
         console.log(i);
-        this.countryForm.controls.country.patchValue(this.countryList[i]);
+        this.countryForm.controls.country.patchValue(this.countryAdd[i]);
       }
 
 
     //delete country from list
     deleteCountry(i: any){
        
-        this.countryList.splice(i,1);
+        this.countryAdd.splice(i,1);
     }
 
 
     //insert countryForm into httService
-    submit(url){
+    submit(){
 
-        // this.clientService.insert(url,this.countryList).subscribe(
-        //     data =>{
-        //         this.countryList=data;
+        this.countryService.insert(this.countryAdd).subscribe(
+            data =>{
+                this.countryAdd=data;
                 console.log(this.countryList);
-        //     }
-        // );
-        }
-    }
+            }
+         );
+     }
+}

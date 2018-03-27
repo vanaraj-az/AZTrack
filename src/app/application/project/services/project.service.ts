@@ -11,11 +11,11 @@ export class ProjectService {
     }
 
     insert(data : JSON) {
-        return this.httpService.post(this.url, data);
+        return this.httpService.post("http://localhost:8080/project/add", data);
     }
 
     findAll() {
-        return this.httpService.get("data/clientlist.json");
+        return this.httpService.get("http://localhost:8080/project/clientcall");
     }
 
     findById(id : Number) {

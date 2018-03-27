@@ -40,7 +40,7 @@ export class ClientListComponent  {
         .debounceTime(200).distinctUntilChanged()
         .merge(this.focus$)
         .merge(this.click$.filter(() => !this.instance.isPopupOpen()))
-        .map(term => (term === '' ? this.countryData : this.countryData.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)));
+        .map(term => (term === '' ? this.countryData : this.countryData.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10));
         
         function(i){
             //  if(this.clientForm.get('country').value !== this.countryData[i].value){

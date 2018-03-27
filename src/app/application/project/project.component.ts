@@ -49,14 +49,14 @@ export class ProjectComponent implements OnInit {
 
 
     addProject() {
-        // this.projectService.insert(this.projectForm.value).subscribe(
-            // data => {
+         this.projectService.insert(this.projectForm.value).subscribe(
+             data => {
 
-            //     this.projectData = data;
+                this.projectData = data;
                 console.log(this.projectForm.value)
                 this.projectForm.reset();
-            // }
-        // );
+             }
+         );
     }
 
     editProject(project : any) {

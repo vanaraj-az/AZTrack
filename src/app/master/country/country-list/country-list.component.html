@@ -53,16 +53,16 @@
         </div>
     </ng-template>
     <div class="table-responsive">
-        <table class="table table-hover table-bordered" align="center">
+        <table class="table" align="center">
             <thead class="thead-light">
                 <tr class="row">
                     <th class="col-md-3 text-align">No.</th>
-                    <th class="col-md-3 text-align">Countries</th>
-                    <th class="col-md-3 text-align">Action</th>
+                    <th class="col-md-3 text-align">Newly added Countries</th>
+                    <th class="col-md-3 text-align">Action</th>   
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let country of countryList; let i=index" class="row">
+                <tr *ngFor="let country of countryAdd; let i=index" class="row">
                     <td class="col-md-3 text-align">{{i+1}}</td>
                     <td class="col-md-3 text-align">{{country}}</td>
                     <td class="col-md-3 text-align">
@@ -73,16 +73,34 @@
             </tbody>
         </table>
     </div>
+    <div class="table-responsive">
+        <table class="table table-bordered" align="center">
+            <thead class="thead-light">
+                <tr class="row">
+                    <th class="col-md-3 text-align">No.</th>
+                    <th class="col-md-3 text-align">Countries</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let country of countryList; let i=index" class="row">
+                    <td class="col-md-3 text-align">{{i+1}}</td>
+                    <td class="col-md-3 text-align">{{country}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="row margin-top">
         <div class="col-md-10 col-sm-10 col-xs-10"></div>
         <div class="col-md-1 col-sm-1 col-xs-1">
-            <button type="submit" class="btn btn-outline-primary float-right" ><a  href="">Back</a></button>
+            <a  href=""><button type="submit" class="btn btn-outline-primary float-right" >Back</button></a>
         </div>
         <div class="col-md-1 col-sm-1 col-xs-1">
             <button type="submit" (click)="submit()" class="btn btn-outline-primary float-right" >Submit</button>
         </div>
     </div> 
 </div>
+
+
 
 
 
