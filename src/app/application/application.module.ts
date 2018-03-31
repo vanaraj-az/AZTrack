@@ -3,6 +3,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { UserModule } from './user/user.module';
 import { ClientModule } from './client/client.module';
 import { ProjectModule } from './project/project.module';
+import { WorkLogModule } from './worklog/worklog.module';
+
 import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
@@ -10,7 +12,9 @@ import { PaymentComponent } from './payment/payment.component';
       DashboardModule,
       UserModule,
       ClientModule,
-      ProjectModule
+      ProjectModule,
+      WorkLogModule
+     
   ],
   declarations: [PaymentComponent]
 })
