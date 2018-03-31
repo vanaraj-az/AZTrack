@@ -1,0 +1,81 @@
+<div class="page-content">
+    <form  [formGroup]="issueForm">
+        <div class="row">
+            <div class="col-md-12 col-md-sm col-xs-12">
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-md-2 col-xs-2 col-sm-2 col-form-label">Issue Type</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <select [ngClass]="{'is-invalid': issueForm.get('issueType').invalid}" class="form-control" formControlName="issueType">
+                            <option hidden>Nothing Selected</option>
+                            <option *ngFor="let issueType of issueType;let i=index;">{{issueType}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <error-required [controls]="issueForm.get('title')">
+                                This field is required
+                            </error-required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-md-2 col-xs-2 col-sm-2 col-form-label">Title</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" [ngClass]="{'is-invalid': issueForm.get('title').invalid}" class="form-control" formControlName="title">
+                        <div class="invalid-feedback">
+                            <error-required [controls]="issueForm.get('title')">
+                                This field is required
+                            </error-required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-md-2 col-xs-2 col-sm-2 col-form-label">Description</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <textarea type="text" placeholder="Enter the description" [ngClass]="{'is-invalid': issueForm.get('description').invalid}" class="form-control" formControlName="description"></textarea>
+                        <div class="invalid-feedback">
+                            <error-required [controls]="issueForm.get('description')">
+                                This field is required
+                            </error-required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-md-2 col-xs-2 col-sm-2 col-form-label">Original Estimation</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" [ngClass]="{'is-invalid': issueForm.get('originalEstimation').invalid}" class="form-control" formControlName="originalEstimation">
+                        <div class="invalid-feedback">
+                            <error-required [controls]="issueForm.get('originalEstimation')">
+                                This field is required
+                            </error-required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-md-2 col-xs-2 col-sm-2 col-form-label">Attachment</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" [ngClass]="{'is-invalid': issueForm.get('attachment').invalid}" class="form-control" formControlName="attachment">
+                        <div class="invalid-feedback">
+                            <error-required [controls]="issueForm.get('attachment')">
+                                This field is required
+                            </error-required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-10 col-sm-10 col-xs-10">
+            
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <a href=""><button type="submit" class="btn btn-outline-primary float-right" >Back</button></a>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <button [disabled]="!issueForm.valid" class="btn btn-outline-primary float-right">Submit</button>
+        </div>
+    </div>
+</div>
